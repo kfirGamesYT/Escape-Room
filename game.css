@@ -1,0 +1,398 @@
+html{scroll-behavior: smooth;}
+
+   body{
+     margin: 0;
+     padding: 0;
+     color: #000;
+     background: #fff;
+     text-align: left;
+     font-family: "Open Sans", sans-serif;
+   }
+
+   #loading-screen{
+     margin: 0;
+     width: 100%;
+     height: 100vh;
+     overflow: hidden;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background: #e67e22;
+     text-align: center;
+     z-index: 999;
+   }
+
+   #loader img{
+     width: 80%;
+     max-width: 200px;
+     height: auto;
+     margin-top: 30vh;
+     animation: loading 4s infinite;
+   }
+
+   #game{
+     margin: 0;
+     user-select: none;
+   }
+
+   #rooms{
+     width: 100%;
+     height: auto;
+     background: #e67e22;
+   }
+
+   #room1{
+     background-image: url("graphics/office2.svg");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+   }
+
+   #room2{
+     background-image: url("graphics/bedroom3.svg");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+     filter: brightness(5%);
+   }
+
+   #room3{
+     background-image: url("graphics/kitchen.svg");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+   }
+
+   #room4{
+     background-image: url("graphics/exit.svg");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+   }
+
+   #congrats{
+     background-image: url("graphics/congrats/rooms-gif.gif");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+     font-family: 'Indie Flower', cursive;
+     font-size: 24px;
+     padding: 15px;
+     background: #e67e22;
+     color: #fff;
+   }
+
+   #congrats h1{
+     margin: 0px;
+     display: block;
+     font-family: 'Indie Flower', cursive;
+     font-size: 36px;
+   }
+
+   #congrats button{
+     margin: 0px;
+     width: 60%;
+     height: auto;
+     background: #e67e22;
+     color: #fff;
+     font-size: 24px;
+     border: 4px solid #fff;
+     border-radius: 8px;
+     outline: none;
+   }
+
+   #startscreen{
+     background-image: url("graphics/congrats/rooms-gif.gif");
+     background-repeat: no-repeat;
+     background-size: auto 100%;
+     min-height: 100vh;
+     font-size: 24px;
+     padding: 0;
+     padding-top: 15px;
+     color: #fff;
+     text-align: center;
+   }
+
+   #startscreen button{
+     margin: 10px;
+     margin-left: 10%;
+     width: 80%;
+     height: auto;
+     background: #e67e22;
+     color: #fff;
+     font-size: 24px;
+     border: 4px solid #fff;
+     border-radius: 8px;
+     outline: none;
+   }
+
+   #startscreen img{
+     width: 90%;
+     max-width: 400px;
+   }
+
+   .room{
+     display: none;
+     width: 100%;
+     height: auto;
+     min-height: 150px;
+     background: #3498db;
+     overflow: hidden;
+   }
+
+   .room h1{
+     margin: 10px;
+     display: none;
+   }
+
+   #backpack{
+     width: 100%;
+     height: auto;
+     min-height: 56px;
+     background: #e67e22;
+     position: absolute;
+     bottom: 0;
+     text-align: center;
+     display: none;
+   }
+
+   #backpack img{
+     width: auto;
+     max-width: 66px;
+     min-height: 26px;
+     max-height: 46px;
+     margin: 5px;
+     position: static;
+     right: 0;
+     left: 0;
+   }
+
+   #backpack img:hover{
+     filter: grayscale(100%);
+     cursor: pointer;
+   }
+
+   .backpack-btn{
+     font-size: 36px;
+     margin: 10px;
+     color: #000;
+   }
+
+   .backpack-btn:hover{
+     cursor: pointer;
+     color: #fff;
+   }
+
+   .puzzleWindow{
+     width: 90%;
+     height: auto;
+     min-height: 300px;
+     position: fixed;
+     top: 24px;
+     background: #e67e22;
+     margin: auto;
+     margin-left: 5%;
+     border: 8px solid #000;
+     border-radius: 12px;
+     z-index: 150;
+     text-align: center;
+   }
+
+   .puzzleWindow h1{
+     margin: 5px;
+     text-align: left;
+   }
+
+   .puzzleWindow i{
+     font-size: 36px;
+     margin: 10px;
+     position: fixed;
+     top: 34px;
+     transition: .2s all;
+     right: 5%;
+     cursor: pointer;
+   }
+
+   .puzzleWindow i:hover{
+     color: #fff;
+   }
+
+   .puzzleWindow img{
+     margin: 10px;
+     width: auto;
+     height: auto;
+     max-height: 50vw;
+     max-width: 80%;
+   }
+
+   .puzzleWindow input{
+     margin: 10px;
+     width: 5%;
+     height: auto;
+     background: #f9f9f9;
+     color: #000;
+     font-size: 22px;
+     border: 4px solid #000;
+     border-radius: 8px;
+     outline: none;
+     -webkit-appearance: none;
+     -moz-appearance: textfield;
+     appearance: none;
+   }
+
+   #calendarInput{
+     margin: 10px;
+     width: 80%;
+     height: auto;
+     background: #f9f9f9;
+     color: #000;
+     font-size: 22px;
+     border: 4px solid #000;
+     border-radius: 8px;
+     outline: none;
+   }
+
+   .puzzleWindow button{
+     margin: 10px;
+     margin-left: 5px;
+     width: 10%;
+     height: auto;
+     background: #f9f9f9;
+     color: #000;
+     font-size: 22px;
+     border: 4px solid #000;
+     border-radius: 8px;
+     outline: none;
+   }
+
+   .puzzleWindow textarea{
+     margin: 10px;
+     width: 90%;
+     height: auto;
+     min-height: 150px;
+     max-height: 45vh;
+     background: #f9f9f9;
+     color: #000;
+     font-size: 16px;
+     font-family: "Open Sans", sans-serif;
+     border: 4px solid #000;
+     border-radius: 8px;
+     outline: none;
+     resize: vertical;
+   }
+
+   .controlbutton{
+     height: 46px;
+     width: 46px;
+     font-size: 24px;
+     border: none;
+     border-radius: 50%;
+     margin: 15px;
+     color: #fff;
+     background: #e67e22;
+     float: right;
+     position: fixed;
+     outline: none;
+   }
+
+   #mute-btn{
+     right: 0;
+     top: 0;
+   }
+
+   #help-btn{
+     right: 0;
+     bottom: 71px;
+     display: none;
+     z-index: 800;
+   }
+
+   button:hover{
+     filter: grayscale(50%);
+     cursor: pointer;
+   }
+
+   @keyframes loading{
+     to{
+       transform: rotate(720deg);
+     }
+   }
+
+   @keyframes item-fire1{
+     from{
+       bottom: 0;
+       left: calc(50% - 40px);
+       width:40px;
+       z-index: 79;
+     }
+     to{
+       top: 35vh;
+       left: 25%;
+       width:40px;
+       z-index: 79;
+     }
+   }
+
+   @keyframes item-pocketligher1{
+     from{
+       bottom: 0;
+       left: calc(50% - 30px);
+       width:30px;
+     }
+     to{
+       top: 72vh;
+       left: 76%;
+     }
+   }
+
+   @media screen and (max-height:550px){
+     #backpack{
+       width: 100%;
+       height: auto;
+       min-height: 36px;
+       max-height: 36px;
+     }
+
+     #backpack img{
+       width: auto;
+       max-width: 49.5px;
+       min-height: 19.5px;
+       max-height: 34.5px;
+     }
+
+     .backpack-btn{
+       font-size: 22px;
+       margin: 5px;
+       color: #000;
+     }
+
+     .controlbutton{
+       height: 36px;
+       width: 36px;
+       font-size: 14px;
+       margin: 15px;
+     }
+
+     #mute-btn{
+       right: 0;
+       top: 0;
+     }
+
+     #help-btn{
+       left: 0;
+       top: 0;
+     }
+
+     #startscreen{
+       padding: 0;
+       padding-top: 0px;
+     }
+
+     #startscreen img{
+       width: auto;
+       height: 30vh;
+     }
+   }
+
+   ::selection {background: #5499c7; color: #ffffff;}
+   ::-moz-selection {background: #5499c7; color: #ffffff;}

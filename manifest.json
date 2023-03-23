@@ -1,0 +1,10 @@
+{
+  "name": "חדר בריחה",
+  "short_name": "חדר בריחה",
+  "description": "יש למצוא קוד מספר בן שבע ספרות כדי לצאת מהבניין בזמן הקצר ביותר.",
+  "lang": "he",
+  "orientation": "איזה שהו",
+  "theme_color": "#e67e22",
+  "background_color": "#e67e22",
+  "display": "עצמאי",
+}
